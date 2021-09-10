@@ -3,14 +3,14 @@ $register = ($page === "register.php") ? true : false;
 $login    = ($page === "login.php")    ? true : false;
 ?>
 
-<div class="section section-login">
+<main class="section section-login">
 
-    <div class="row section-login-row">
+    <div class="row section-row section-login-row">
 
         <div class="col-md-4">
-            <section class="section-login-left">
+            <section class="section-left section-login-left">
                 <h3><?php echo PAGE_TITLE ?></h3>
-<pre class="section-login-left-logo">
+<pre class="section-left-logo section-login-left-logo">
 ░░█ ▄▀█ █▀▄▀█ █▀▀ █▀   █▀▄▀█ █▀▀ █░░ █░░ █▀█ █▀█
 █▄█ █▀█ █░▀░█ ██▄ ▄█   █░▀░█ ██▄ █▄▄ █▄▄ █▄█ █▀▄
 </pre>
@@ -18,7 +18,7 @@ $login    = ($page === "login.php")    ? true : false;
         </div>
     
         <div class="col-md-8">
-            <section class="section-login-right">
+            <section class="section-right section-login-right">
 
                 <h3 class="text-center">
                     <?php
@@ -67,4 +67,4 @@ $login    = ($page === "login.php")    ? true : false;
         </div>
 
     </div>
-</div>
+</main>

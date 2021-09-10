@@ -14,6 +14,8 @@ $page = basename($_SERVER['PHP_SELF']);
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
     crossorigin="anonymous" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
     <link href="css/styles.css" rel="stylesheet">
 
     <title><?php echo PAGE_TITLE; ?></title>
