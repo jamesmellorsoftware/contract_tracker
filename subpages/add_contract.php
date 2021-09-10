@@ -10,13 +10,8 @@
                 data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <div class="modal-body">
-
-                <form method="post">
-                    <label for="exampleFormControlInput1" class="form-label hidden">
-                        Contract ID
-                    </label>
-                    <input type="number" class="form-control hidden" name="">
+            <form method="post">
+                <div class="modal-body">
                     <label for="exampleFormControlInput1" class="form-label">
                         Client ID
                     </label>
@@ -25,14 +20,12 @@
                         Client Name
                     </label>
                     <input type="text" class="form-control" name="">
-                </form>
+                </div>
 
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger">Clear</button>
-                <button type="button" class="btn btn-primary-1">Search</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary-1">Add</button>
+                </div>
+            </form>
 
         </div>
     </div>

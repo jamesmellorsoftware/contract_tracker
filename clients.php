@@ -23,6 +23,7 @@ require_once("includes/head.php");
                         <a href="index.php">
                             <i class="bi bi-receipt"></i>
                         </a>
+                        <i class="bi bi-search"></i>
                     </div>
                 </div>
 

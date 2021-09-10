@@ -23,6 +23,7 @@ require_once("includes/head.php");
                         <a href="clients.php">
                             <i class="bi bi-person-fill"></i>
                         </a>
+                        <i class="bi bi-search"></i>
                     </div>
                 </div>
 
