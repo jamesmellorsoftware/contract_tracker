@@ -5,73 +5,66 @@ $login    = ($page === "login.php")    ? true : false;
 
 <div class="section section-login">
 
-    <div class="row">
+    <div class="row section-login-row">
+
+        <div class="col-md-4">
+            <section class="section-login-left">
+                <h3><?php echo PAGE_TITLE ?></h3>
+<pre class="section-login-left-logo">
+░░█ ▄▀█ █▀▄▀█ █▀▀ █▀   █▀▄▀█ █▀▀ █░░ █░░ █▀█ █▀█
+█▄█ █▀█ █░▀░█ ██▄ ▄█   █░▀░█ ██▄ █▄▄ █▄▄ █▄█ █▀▄
+</pre>
+            </section>
+        </div>
     
-        <header>
-            <div class="row text-center">
-                <div class="col-xs-12">
-                    <h2>
-                        <?php echo PAGE_TITLE ?>
-                    </h2>
-                </div>
-            </div>
-        </header>
+        <div class="col-md-8">
+            <section class="section-login-right">
 
-        <section class="text-center">
+                <h3 class="text-center">
+                    <?php
+                        if ($register) {
+                            echo LOGINREG_BUTTON_REGISTER;
+                        } else if ($login) {
+                            echo LOGINREG_BUTTON_LOGIN;
+                        }
+                    ?>
+                </h3>
+                
+                <form class="section-login-right-form" method="post">
 
-            <div class="row ">
+                    <label for="username" class="form-label text-danger">
+                        Username already in use.
+                    </label>
 
-                <div class="col-md-4"></div>
+                    <input type="text" name="username" class="form-control"
+                    maxlength="<?php echo LIMIT_USERNAME; ?>"
+                    placeholder="<?php echo LOGINREG_PLACEHOLDER_USERNAME; ?>">
 
-                <div class="col-md-4">
-                    <form method="post">
+                    <label for="password" class="form-label text-danger">
+                        Password incorect.
+                    </label>
 
-                        <label for="username" class="form-label text-danger">
-                            Error message
-                        </label>
+                    <input type="password" name="password" class="form-control"
+                    maxlength="<?php echo LIMIT_PASSWORD; ?>"
+                    placeholder="<?php echo LOGINREG_PLACEHOLDER_PASSWORD; ?>">
 
-                        <input type="text" name="username" class="form-control"
-                        maxlength="<?php echo LIMIT_USERNAME; ?>"
-                        placeholder="<?php echo LOGINREG_PLACEHOLDER_USERNAME; ?>">
-
-                        <label for="password" class="form-label text-danger">
-                            Error message
-                        </label>
-
-                        <input type="password" name="password" class="form-control"
-                        maxlength="<?php echo LIMIT_PASSWORD; ?>"
-                        placeholder="<?php echo LOGINREG_PLACEHOLDER_PASSWORD; ?>">
-
-                        <a class="btn btn-primary" href="#">
+                    <div class="section-login-right-form-buttons">
+                        <a class="btn btn-primary-1" href="#">
                             <?php if ($register) echo LOGINREG_BUTTON_REGISTER; ?>
                             <?php if ($login)    echo LOGINREG_BUTTON_LOGIN; ?>
                         </a>
 
-                        <a class="btn btn-info"
+                        <a
                         href="<?php if ($register) echo "login.php"; if ($login) echo "register.php"; ?>">
                             <?php if ($register) echo LOGINREG_CHANGE_LOGIN; ?>
                             <?php if ($login)    echo LOGINREG_CHANGE_REGISTER; ?>
                         </a>
+                    </div>
 
-                    </form>
-                </div>
+                </form>
 
-                <div class="col-md-4"></div>
-
-            </div>
-
-        </section>
-
-        <footer class="section-login-footer">
-            <div class="row text-center">
-                <div class="col-xs-12">
-<pre class="section-login-footer-logo">
-░░█ ▄▀█ █▀▄▀█ █▀▀ █▀   █▀▄▀█ █▀▀ █░░ █░░ █▀█ █▀█
-█▄█ █▀█ █░▀░█ ██▄ ▄█   █░▀░█ ██▄ █▄▄ █▄▄ █▄█ █▀▄
-</pre>
-                </div>
-            </div>
-        </footer>
+            </section>
+        </div>
 
     </div>
 </div>
