@@ -17,14 +17,20 @@ require_once("includes/head.php");
             <section class="section-right section-mainapp-right">
 
                 <div class="row text-center section-mainapp-right-controls">
+
                     <div class="col-md-12 text-center">
                         <i class="bi bi-plus section-mainapp-right-controls-icon"
                         data-bs-toggle="modal" data-bs-target="#contract"></i>
+                        
+                        <i class="bi bi-search section-mainapp-right-controls-icon"></i>
+
                         <a href="clients.php">
-                            <i class="bi bi-person-fill"></i>
+                            <i class="bi bi-person-fill section-mainapp-right-controls-icon"></i>
                         </a>
-                        <i class="bi bi-search"></i>
                     </div>
+                    
+                    <i class="bi bi-x-circle-fill text-danger section-right-logout"></i>
+
                 </div>
 
                 <table class="table table-hover section-mainapp-right-table">

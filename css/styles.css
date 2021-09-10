@@ -42,6 +42,16 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  position: relative;
+}
+
+.section-right-logout {
+  cursor: pointer;
+  font-size: 1.8rem;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 2rem;
 }
 
 .section-login-right-form-buttons {
@@ -73,9 +83,11 @@ body {
 }
 
 .section-mainapp-right-controls-icon, .section-clients-right-controls-icon {
-  display: inline;
+  color: black;
+  cursor: pointer;
   font-size: 2rem;
-  padding: 1rem;
+  padding-right: 10px;
+  text-decoration: none;
   width: 1rem;
 }
 

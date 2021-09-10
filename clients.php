@@ -20,11 +20,15 @@ require_once("includes/head.php");
                     <div class="col-md-12 text-center">
                         <i class="bi bi-plus section-clients-right-controls-icon"
                         data-bs-toggle="modal" data-bs-target="#contract"></i>
+                        
+                        <i class="bi bi-search section-clients-right-controls-icon"></i>
+                        
                         <a href="index.php">
-                            <i class="bi bi-receipt"></i>
+                            <i class="bi bi-receipt section-clients-right-controls-icon"></i>
                         </a>
-                        <i class="bi bi-search"></i>
                     </div>
+
+                    <i class="bi bi-x-circle-fill text-danger section-right-logout"></i>
                 </div>
 
                 <table class="table table-hover section-clients-right-table">
