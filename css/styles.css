@@ -30,6 +30,7 @@ body {
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  user-select: none;
 }
 
 .section-left-logo {
@@ -51,7 +52,12 @@ body {
   position: absolute;
   right: 10px;
   top: 10px;
+  transition: all 0.3s;
   width: 2rem;
+}
+
+.section-right-logout:hover {
+  color: #49a078 !important;
 }
 
 .section-login-right-form-buttons {
@@ -88,7 +94,12 @@ body {
   font-size: 2rem;
   padding-right: 10px;
   text-decoration: none;
+  transition: all 0.3s;
   width: 1rem;
+}
+
+.section-mainapp-right-controls-icon:hover, .section-clients-right-controls-icon:hover {
+  color: #49a078;
 }
 
 .section-mainapp-right-table, .section-clients-right-table {
