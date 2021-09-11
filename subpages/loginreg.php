@@ -38,9 +38,7 @@ $login    = ($page === "login.php")    ? true : false;
                     <input type="text" id="username" name="username" class="form-control"
                     maxlength="<?php echo LIMIT_USERNAME; ?>"
                     placeholder="<?php echo LOGINREG_PLACEHOLDER_USERNAME; ?>">
-                    <p class="error error-username text-danger">
-                        Example error message
-                    </p>
+                    <p class="error error-username text-danger invisible"></p>
 
                     <label for="password" class="form-label">
                         Password
@@ -48,9 +46,7 @@ $login    = ($page === "login.php")    ? true : false;
                     <input type="password" id="password" name="password" class="form-control"
                     maxlength="<?php echo LIMIT_PASSWORD; ?>"
                     placeholder="<?php echo LOGINREG_PLACEHOLDER_PASSWORD; ?>">
-                    <p class="error error-password text-danger">
-                        Example error message
-                    </p>
+                    <p class="error error-password text-danger invisible"></p>
 
                     <div class="section-login-right-form-buttons">
                         <a id="loginreg_submit" href="#"

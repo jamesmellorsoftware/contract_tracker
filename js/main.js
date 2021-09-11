@@ -27,6 +27,7 @@ ContractTracker.displayErrors = function(elems) {
         for (let i = 0; i < err_elems.length; i++) {
             if (elems[target].length) {
                 err_elems[i].innerHTML = elems[target];
+                err_elems[i].classList.remove("invisible");
             }
         }
         // Make field red
