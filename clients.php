@@ -28,82 +28,136 @@ require_once("includes/head.php");
                         </a>
                     </div>
 
-                    <i class="bi bi-x-circle-fill text-danger section-right-logout"></i>
+                    <a class="btn btn-danger section-right-logout">
+                        <?php echo LOGOUT_BUTTON; ?>
+                    </a>
                 </div>
 
                 <table class="table table-hover section-clients-right-table">
                     <thead>
                         <th>Client ID</th>
                         <th>Client name</th>
+                        <th></th>
                     </thead>
                     <tbody>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>John Smith</td>
+                            <td>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,8 @@
 <?php
 
+// Application-wide
 defined("PAGE_TITLE") ? null : define("PAGE_TITLE", "Contract Tracker");
+defined("LOGOUT_BUTTON") ? null : define("LOGOUT_BUTTON", "Log out");
 
 // LOGIN
 defined("LOGINREG_BUTTON_LOGIN") ? null : define("LOGINREG_BUTTON_LOGIN", "Log In");

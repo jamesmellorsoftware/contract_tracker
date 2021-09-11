@@ -48,16 +48,16 @@ body {
 
 .section-right-logout {
   cursor: pointer;
-  font-size: 1.8rem;
   position: absolute;
   right: 10px;
   top: 10px;
   transition: all 0.3s;
-  width: 2rem;
+  width: 7rem;
 }
 
 .section-right-logout:hover {
-  color: #49a078 !important;
+  background-color: #49a078 !important;
+  border-color: #49a078 !important;
 }
 
 .section-login-right-form-buttons {
