@@ -3,8 +3,8 @@
 require_once("../config.php");
 require_once("../variables.php");
 
-if (isset($_POST['login'])) {
-    
+if (isset($_POST['action']) && $_POST['action'] == "login") {
+
     $new_user = User::initialise_new($_POST['username'], $_POST['password']);
 
     if (!$user_retrieved = $new_user->verify_login()) {

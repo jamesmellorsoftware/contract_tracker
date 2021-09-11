@@ -9,19 +9,19 @@ class User extends db_objects {
     public $username;
     public $password;
 
-    // public function save(){
-    //     global $db;
+    public function save(){
+        global $db;
 
-    //     $sql = "INSERT INTO " . User::get_table_name() . " (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO " . User::get_table_name() . " (username, password) VALUES (?, ?)";
 
-    //     $stmt = $db->connection->prepare($sql);
-    //     $stmt->bind_param("ss", $this->username, $this->password);
-    //     $stmt->execute();
+        $stmt = $db->connection->prepare($sql);
+        $stmt->bind_param("ss", $this->username, $this->password);
+        $stmt->execute();
         
-    //     $this->id = $db->inserted_id();
+        $this->id = $db->inserted_id();
 
-    //     return true;
-    // }
+        return true;
+    }
 
     public static function get($username) {
         global $db;
@@ -49,28 +49,28 @@ class User extends db_objects {
         return !empty($result_set) ? true : false;
     }
 
-    // public function verify_registration() {
+    public function verify_registration() {
 
-    //     // Check empty fields
-    //     if (empty($this->username) || strlen($this->username < 1)) $this->errors['username'] = LOGINREG_ERROR_USERNAME_EMPTY;
-    //     if (empty($this->password) || strlen($this->password < 1)) $this->errors['password'] = LOGINREG_ERROR_PASSWORD_EMPTY;
+        // Check empty fields
+        if (empty($this->username) || strlen($this->username < 1)) $this->errors['username'] = LOGINREG_ERROR_USERNAME_EMPTY;
+        if (empty($this->password) || strlen($this->password < 1)) $this->errors['password'] = LOGINREG_ERROR_PASSWORD_EMPTY;
 
-    //     if (!empty($this->errors)) return false;
+        if (!empty($this->errors)) return false;
 
-    //     // Check field lengths
-    //     if (strlen($this->username) > LIMIT_USERNAME) $this->errors['username'] = LOGINREG_ERROR_USERNAME_LENGTH;
-    //     if (strlen($this->password) > LIMIT_PASSWORD) $this->errors['password'] = LOGINREG_ERROR_PASSWORD_LENGTH;
+        // Check field lengths
+        if (strlen($this->username) > LIMIT_USERNAME) $this->errors['username'] = LOGINREG_ERROR_USERNAME_LENGTH;
+        if (strlen($this->password) > LIMIT_PASSWORD) $this->errors['password'] = LOGINREG_ERROR_PASSWORD_LENGTH;
 
-    //     if (!empty($this->errors)) return false;
+        if (!empty($this->errors)) return false;
 
-    //     // Check if user exists
-    //     if ($this->exists()) $this->errors['username'] = LOGINREG_ERROR_USERNAME_IN_USE;
+        // Check if user exists
+        if ($this->exists()) $this->errors['username'] = LOGINREG_ERROR_USERNAME_IN_USE;
 
-    //     if (!empty($this->errors)) return false;
+        if (!empty($this->errors)) return false;
 
-    //     return true;
+        return true;
 
-    // }
+    }
 
     public function verify_login() {
 

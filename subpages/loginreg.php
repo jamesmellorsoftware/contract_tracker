@@ -53,7 +53,15 @@ $login    = ($page === "login.php")    ? true : false;
                     </p>
 
                     <div class="section-login-right-form-buttons">
-                        <a id="loginreg_submit" class="btn btn-primary-1" href="#">
+                        <a id="loginreg_submit" href="#"
+                        class="btn btn-primary-1
+                        <?php
+                            if ($register) {
+                                echo "register";
+                            } else if ($login) {
+                                echo "login";
+                            }
+                        ?>">
                             <?php if ($register) echo LOGINREG_BUTTON_REGISTER; ?>
                             <?php if ($login)    echo LOGINREG_BUTTON_LOGIN; ?>
                         </a>

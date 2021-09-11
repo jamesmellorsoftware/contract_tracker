@@ -4,6 +4,7 @@ ContractTracker.loginreg = {};
 // Define controllers
 ContractTracker.loginreg.controllers = {};
 ContractTracker.loginreg.controllers.login = "includes/controllers/login_controller.php";
+ContractTracker.loginreg.controllers.login = "includes/controllers/register_controller.php";
 
 // Define loginreg elements
 ContractTracker.loginreg.elements = {};
@@ -12,21 +13,31 @@ ContractTracker.loginreg.elements.password = document.getElementById("password")
 ContractTracker.loginreg.elements.button = document.getElementById("loginreg_submit");
 
 // Define loginreg methods
-ContractTracker.loginreg.login = () => {
+ContractTracker.loginreg.loginreg = () => {
 
-    ContractTracker.addLoader(ContractTracker.loginreg.elements.button);
+    let button =  ContractTracker.loginreg.elements.button;
+
+    ContractTracker.addLoader(button);
 
     // Get username & password
     let username = ContractTracker.loginreg.elements.username.value;
     let password = ContractTracker.loginreg.elements.password.value;
 
+    if (button.classList.contains("register")) {
+        var action = "register";
+        var controller = ContractTracker.loginreg.controllers.register;
+    } else if (button.classList.contains("login")) {
+        var action = "login";
+        var controller = ContractTracker.loginreg.controllers.login;
+    }
+    
     // Pass to server to check
     $.ajax({
         type: 'post',
-        url: ContractTracker.loginreg.controllers.login,
+        url: controller,
         dataType: 'json',
         data: {
-            "login"   : true,
+            "action"  : action,
             "username": username,
             "password": password
         },
@@ -47,4 +58,4 @@ ContractTracker.loginreg.login = () => {
 }
 
 // Add click handlers
-ContractTracker.addClickListener(ContractTracker.loginreg.elements.button, ContractTracker.loginreg.login)
+ContractTracker.addClickListener(ContractTracker.loginreg.elements.button, ContractTracker.loginreg.loginreg)
