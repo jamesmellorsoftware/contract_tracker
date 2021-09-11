@@ -16,8 +16,8 @@ require_once("includes/head.php");
         <div class="col-md-9 section-clients-right-container">
             <section class="section-right section-clients-right">
 
-                <div class="row text-center section-clients-right-controls">
-                    <div class="col-md-12 text-center">
+                <div class="row text-center section-right-controls section-clients-right-controls">
+                    <div class="col-md-12 section-right-controls-icons text-center">
                         <i class="bi bi-plus section-clients-right-controls-icon"
                         data-bs-toggle="modal" data-bs-target="#contract"></i>
                         

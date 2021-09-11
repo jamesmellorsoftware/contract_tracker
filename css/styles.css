@@ -52,6 +52,18 @@ input:focus {
   position: relative;
 }
 
+.section-right-controls {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-right-controls-icons {
+    align-items: flex-start;
+    text-align: left !important;
+  }
+}
+
 .section-right-logout {
   cursor: pointer;
   position: absolute;

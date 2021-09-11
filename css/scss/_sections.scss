@@ -22,6 +22,18 @@
         height: 100%;
         position: relative;
 
+        &-controls {
+            margin-bottom: 5px;
+            margin-top: 5px;
+
+            &-icons {
+                @media screen and (max-width: $screenwidth-col-xs) {
+                    align-items: flex-start;
+                    text-align: left !important;
+                }
+            }
+        }
+
         &-logout {
             cursor: pointer;
             position: absolute;
