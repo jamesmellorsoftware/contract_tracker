@@ -92,7 +92,7 @@ input:focus {
   right: 10px;
   top: 10px;
   transition: all 0.3s;
-  width: 7rem;
+  width: 9rem;
 }
 
 .section-right-logout:hover {

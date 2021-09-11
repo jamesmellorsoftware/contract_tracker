@@ -1,6 +1,6 @@
 <?php
 require_once("includes/head.php");
-// if (!$session->is_signed_in()) header("Location: login.php");
+if (!$session->is_signed_in()) header("Location: login.php");
 ?>
 
 <main class="section section-mainapp">
@@ -30,8 +30,8 @@ require_once("includes/head.php");
                         </a>
                     </div>
                     
-                    <a class="btn btn-danger section-right-logout">
-                        <?php echo LOGOUT_BUTTON; ?>
+                    <a class="btn btn-danger section-right-logout" href="logout.php">
+                        <?php echo LOGOUT_BUTTON . " " . $session->username; ?>
                     </a>
 
                 </div>
