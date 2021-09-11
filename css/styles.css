@@ -52,6 +52,12 @@ input:focus {
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  .section-right-container {
+    height: 85vh !important;
+  }
+}
+
 .section-right-controls {
   margin-bottom: 5px;
   margin-top: 5px;

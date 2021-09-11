@@ -13,7 +13,7 @@ require_once("includes/head.php");
             </section>
         </div>
     
-        <div class="col-md-9 section-clients-right-container">
+        <div class="col-md-9 section-right-container section-clients-right-container">
             <section class="section-right section-clients-right">
 
                 <div class="row text-center section-right-controls section-clients-right-controls">

@@ -22,6 +22,12 @@
         height: 100%;
         position: relative;
 
+        &-container {
+            @media screen and (max-width: $screenwidth-col-xs) {
+                height: 85vh !important;
+            }
+        }
+
         &-controls {
             margin-bottom: 5px;
             margin-top: 5px;
