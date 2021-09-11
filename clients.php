@@ -45,6 +45,7 @@ $clients = Client::retrieve();
                         </th>
                         <th></th>
                     </thead>
+                    
                     <tbody>
                         <?php foreach ($clients as $client) { ?>
                             <tr class="section-right-table-row">

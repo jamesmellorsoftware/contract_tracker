@@ -25,16 +25,18 @@ class Client extends db_objects {
 
     public static function retrieve() {
         global $db;
+        global $session;
 
         $sql = "SELECT * FROM " . Client::get_table_name() . " ";
-        // $sql.= "WHERE username = ? ";
-        // $sql.= "LIMIT 1 ";
+        $sql.= "WHERE user_id = ? ";
 
         $stmt = $db->connection->prepare($sql);
-        // $stmt->bind_param("s", $username);
+        $stmt->bind_param("s", $session->user_id);
         $stmt->execute();
         $results = $stmt->get_result();
         $result_set = self::retrieve_objects_from_db($results);
+
+        print_r($result_set);
 
         return $result_set;
     }
