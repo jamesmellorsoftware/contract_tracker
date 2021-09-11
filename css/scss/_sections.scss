@@ -9,6 +9,10 @@
         justify-content: center;
         user-select: none;
 
+        @media screen and (max-width: $screenwidth-col-xs) {
+            box-shadow: 0px 2px 8px $primary-5;
+        }
+
         &-logo {
             font-size: 0.3rem;
         }

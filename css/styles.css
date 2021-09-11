@@ -39,6 +39,12 @@ input:focus {
   user-select: none;
 }
 
+@media screen and (max-width: 768px) {
+  .section-left {
+    box-shadow: 0px 2px 8px #1f2421;
+  }
+}
+
 .section-left-logo {
   font-size: 0.3rem;
 }
