@@ -1,6 +1,7 @@
 <?php
 require_once("includes/head.php");
 if (!$session->is_signed_in()) header("Location: login.php");
+$clients = Client::retrieve();
 ?>
 
 <main class="section section-clients">
@@ -45,125 +46,19 @@ if (!$session->is_signed_in()) header("Location: login.php");
                         <th></th>
                     </thead>
                     <tbody>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
+                        <?php foreach ($clients as $client) { ?>
+                            <tr class="section-right-table-row">
+                                <td>
+                                    <?php echo $client->id; ?>
+                                </td>
+                                <td>
+                                    <?php echo $client->name; ?>
+                                </td>
+                                <td class="section-right-table-delete">
+                                    <i class="bi bi-x-circle-fill text-danger"></i>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
 

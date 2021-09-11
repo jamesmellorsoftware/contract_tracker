@@ -9,8 +9,8 @@ define('DB_NAME', 'contracttracker');
 require_once('db.php');
 require_once('session.php');
 require_once('db_objects.php');
+require_once('client.php');
 require_once('user.php');
-// require_once('timer.php');
 
 // Define input limits
 defined("LIMIT_PASSWORD") ? null : define("LIMIT_PASSWORD", 11);
