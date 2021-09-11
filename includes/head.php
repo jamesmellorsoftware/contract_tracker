@@ -18,6 +18,8 @@ $page = basename($_SERVER['PHP_SELF']);
 
     <link href="css/styles.css" rel="stylesheet">
 
+    <script src="js/main.js"></script>
+
     <title><?php echo PAGE_TITLE; ?></title>
 </head>
 

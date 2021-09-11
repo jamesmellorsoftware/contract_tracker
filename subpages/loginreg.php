@@ -30,12 +30,12 @@ $login    = ($page === "login.php")    ? true : false;
                     ?>
                 </h3>
                 
-                <form class="section-login-right-form" method="post">
+                <div class="section-login-right-form" method="post">
 
                     <label for="username" class="form-label">
                         Username
                     </label>
-                    <input type="text" name="username" class="form-control"
+                    <input type="text" id="username" name="username" class="form-control"
                     maxlength="<?php echo LIMIT_USERNAME; ?>"
                     placeholder="<?php echo LOGINREG_PLACEHOLDER_USERNAME; ?>">
                     <p class="error text-danger">
@@ -45,7 +45,7 @@ $login    = ($page === "login.php")    ? true : false;
                     <label for="password" class="form-label">
                         Password
                     </label>
-                    <input type="password" name="password" class="form-control"
+                    <input type="password" id="password" name="password" class="form-control"
                     maxlength="<?php echo LIMIT_PASSWORD; ?>"
                     placeholder="<?php echo LOGINREG_PLACEHOLDER_PASSWORD; ?>">
                     <p class="error text-danger">
@@ -53,7 +53,7 @@ $login    = ($page === "login.php")    ? true : false;
                     </p>
 
                     <div class="section-login-right-form-buttons">
-                        <a class="btn btn-primary-1" href="#">
+                        <a id="loginreg_submit" class="btn btn-primary-1" href="#">
                             <?php if ($register) echo LOGINREG_BUTTON_REGISTER; ?>
                             <?php if ($login)    echo LOGINREG_BUTTON_LOGIN; ?>
                         </a>
@@ -65,10 +65,12 @@ $login    = ($page === "login.php")    ? true : false;
                         </a>
                     </div>
 
-                </form>
+                    </div>
 
             </section>
         </div>
 
     </div>
 </main>
+
+<script src="js/loginreg.js"></script>
