@@ -54,7 +54,7 @@ $login    = ($page === "login.php")    ? true : false;
                             <?php if ($login)    echo LOGINREG_BUTTON_LOGIN; ?>
                         </a>
 
-                        <a
+                        <a class="section-login-right-form-buttons-change"
                         href="<?php if ($register) echo "login.php"; if ($login) echo "register.php"; ?>">
                             <?php if ($register) echo LOGINREG_CHANGE_LOGIN; ?>
                             <?php if ($login)    echo LOGINREG_CHANGE_REGISTER; ?>

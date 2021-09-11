@@ -1,0 +1,29 @@
+&-login {
+
+    &-right {
+
+        &-form {
+
+            &-buttons {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+                transition: all 0.3s;
+
+                &-change:hover {
+                    color: $primary-1;
+                }
+
+            }
+
+        }
+
+    }
+
+    &-row {
+        background-color: #fff;
+        box-shadow: 0px 0px 20px #000;
+        height: 75%;
+        width: 90%;
+    }
+}
