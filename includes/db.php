@@ -14,20 +14,20 @@ class Database {
         if ($this->connection->connect_errno) die("DB CONNECTION FAILED: " . $this->connection->connect_error);
     }
 
-    // public function query($sql){
-    //     // Returns result of mysqli_query() (object) if successful
-    //     // Argument accepted: SQL query string e.g. "SELECT * FROM users"
+    public function query($sql){
+        // Returns result of mysqli_query() (object) if successful
+        // Argument accepted: SQL query string e.g. "SELECT * FROM users"
 
-    //     $result = $this->connection->query($sql);
+        $result = $this->connection->query($sql);
 
-    //     if (!$result) die("QUERY FAILED: " . $this->connection->error);
+        if (!$result) die("QUERY FAILED: " . $this->connection->error);
 
-    //     return $result;
-    // }
+        return $result;
+    }
 
-    // public function inserted_id(){
-    //     return $this->connection->insert_id;
-    // }
+    public function inserted_id(){
+        return $this->connection->insert_id;
+    }
     
 } // end class Database
 

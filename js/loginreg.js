@@ -4,7 +4,7 @@ ContractTracker.loginreg = {};
 // Define controllers
 ContractTracker.loginreg.controllers = {};
 ContractTracker.loginreg.controllers.login = "includes/controllers/login_controller.php";
-ContractTracker.loginreg.controllers.login = "includes/controllers/register_controller.php";
+ContractTracker.loginreg.controllers.register = "includes/controllers/register_controller.php";
 
 // Define loginreg elements
 ContractTracker.loginreg.elements = {};
@@ -42,13 +42,21 @@ ContractTracker.loginreg.loginreg = () => {
             "password": password
         },
         success: function(response){
-            console.log(response);
-            // if (response == true) {
-            //     Timetracker.login.login();
-            // } else {
-            //     Timetracker.login.displayErrors(response);
-            //     Timetracker.login.element.loading.hide();
-            // }
+            if (response == true) {
+                window.location = "index.php";
+            } else {
+                // display errors
+                console.log(response);
+                ContractTracker.removeLoaders(button);
+                ContractTracker.displayErrors(
+                    {
+                        username: response.username,
+                        password: response.password
+                    }
+                )
+                // Timetracker.login.displayErrors(response);
+                // Timetracker.login.element.loading.hide();
+            }
         },
         error: function(error) {
             console.debug('AJAX Error:');
