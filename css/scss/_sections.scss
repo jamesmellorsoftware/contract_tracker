@@ -35,6 +35,32 @@
                 border-color: $primary-1 !important;
             }
         }
+
+        &-table {
+
+            &-delete {
+                cursor: pointer;
+                width: 1rem;
+
+                & > .bi-x-circle-fill { transition: all 0.3s; }
+                & > .bi-x-circle-fill:hover { color: $primary-1 !important; }
+            }
+
+            &-head {
+
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    background-color: $primary-2;
+                }
+            }
+
+            &-row {
+                cursor: pointer;
+            }
+        }
+
     }
 
     align-items: center;

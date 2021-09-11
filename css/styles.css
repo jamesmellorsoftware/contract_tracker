@@ -66,6 +66,32 @@ input:focus {
   border-color: #49a078 !important;
 }
 
+.section-right-table-delete {
+  cursor: pointer;
+  width: 1rem;
+}
+
+.section-right-table-delete > .bi-x-circle-fill {
+  transition: all 0.3s;
+}
+
+.section-right-table-delete > .bi-x-circle-fill:hover {
+  color: #49a078 !important;
+}
+
+.section-right-table-head {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.section-right-table-head:hover {
+  background-color: #9faaaa;
+}
+
+.section-right-table-row {
+  cursor: pointer;
+}
+
 .section-login-right-form-buttons {
   display: flex;
   flex-direction: column;

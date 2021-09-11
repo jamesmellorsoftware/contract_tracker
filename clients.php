@@ -33,129 +33,133 @@ require_once("includes/head.php");
                     </a>
                 </div>
 
-                <table class="table table-hover section-clients-right-table">
+                <table class="table table-hover section-right-table section-clients-right-table">
                     <thead>
-                        <th>Client ID</th>
-                        <th>Client name</th>
+                        <th class="section-right-table-head">
+                            Client ID
+                        </th>
+                        <th class="section-right-table-head">
+                            Client name
+                        </th>
                         <th></th>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="section-right-table-row">
                             <td>2</td>
                             <td>John Smith</td>
-                            <td>
+                            <td class="section-right-table-delete">
                                 <i class="bi bi-x-circle-fill text-danger"></i>
                             </td>
                         </tr>
