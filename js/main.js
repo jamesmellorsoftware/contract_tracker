@@ -22,9 +22,16 @@ ContractTracker.addLoader = function(elem) {
 
 ContractTracker.displayErrors = function(elems) {
     for (target in elems) {
+        // Display text errors
         let err_elems = document.getElementsByClassName(`error-${target}`);
         for (let i = 0; i < err_elems.length; i++) {
-            err_elems[i].innerHTML = elems[target];
+            if (elems[target].length) {
+                err_elems[i].innerHTML = elems[target];
+            }
+        }
+        // Make field red
+        if (elems[target].length) {
+            document.getElementById(target).classList.add('is-invalid');
         }
     }
 }

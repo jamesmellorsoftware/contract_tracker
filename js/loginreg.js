@@ -43,10 +43,8 @@ ContractTracker.loginreg.loginreg = () => {
         },
         success: function(response){
             if (response == true) {
-                window.location = "index.php";
+                ContractTracker.loginreg.login();
             } else {
-                // display errors
-                console.log(response);
                 ContractTracker.removeLoaders(button);
                 ContractTracker.displayErrors(
                     {
@@ -54,8 +52,6 @@ ContractTracker.loginreg.loginreg = () => {
                         password: response.password
                     }
                 )
-                // Timetracker.login.displayErrors(response);
-                // Timetracker.login.element.loading.hide();
             }
         },
         error: function(error) {
@@ -63,6 +59,10 @@ ContractTracker.loginreg.loginreg = () => {
             console.debug(error);
         }
     });
+}
+
+ContractTracker.loginreg.login = function() {
+    window.location = "index.php";
 }
 
 // Add click handlers
