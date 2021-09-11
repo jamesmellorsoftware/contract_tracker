@@ -14,6 +14,12 @@ body {
   color: #fff;
 }
 
+input:active,
+input:focus {
+  border-color: #49a078 !important;
+  box-shadow: 0 0 0 0.25rem rgba(73, 160, 120, 0.25) !important;
+}
+
 .section {
   align-items: center;
   display: flex;
