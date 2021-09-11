@@ -19,9 +19,10 @@ require_once("includes/head.php");
                 <div class="row text-center section-right-controls section-clients-right-controls">
                     <div class="col-md-12 section-right-controls-icons text-center">
                         <i class="bi bi-plus section-clients-right-controls-icon"
-                        data-bs-toggle="modal" data-bs-target="#contract"></i>
+                        data-bs-toggle="modal" data-bs-target="#clients_add"></i>
                         
-                        <i class="bi bi-search section-clients-right-controls-icon"></i>
+                        <i class="bi bi-search section-clients-right-controls-icon"
+                        data-bs-toggle="modal" data-bs-target="#clients_search"></i>
                         
                         <a href="index.php">
                             <i class="bi bi-receipt section-clients-right-controls-icon"></i>
@@ -173,6 +174,7 @@ require_once("includes/head.php");
 </main>
 
 <?php
-require_once("subpages/add_client.php");
+require_once("subpages/clients_add.php");
+require_once("subpages/clients_search.php");
 require_once("includes/foot.php");
 ?>

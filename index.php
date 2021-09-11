@@ -20,9 +20,10 @@ require_once("includes/head.php");
 
                     <div class="col-xs-12 section-right-controls-icons text-center">
                         <i class="bi bi-plus section-mainapp-right-controls-icon"
-                        data-bs-toggle="modal" data-bs-target="#contract"></i>
+                        data-bs-toggle="modal" data-bs-target="#contracts_add"></i>
                         
-                        <i class="bi bi-search section-mainapp-right-controls-icon"></i>
+                        <i class="bi bi-search section-mainapp-right-controls-icon"
+                        data-bs-toggle="modal" data-bs-target="#contracts_search"></i>
 
                         <a href="clients.php">
                             <i class="bi bi-person-fill section-mainapp-right-controls-icon"></i>
@@ -195,6 +196,7 @@ require_once("includes/head.php");
 </main>
 
 <?php
-require_once("subpages/add_contract.php");
+require_once("subpages/contracts_add.php");
+require_once("subpages/contracts_search.php");
 require_once("includes/foot.php");
 ?>

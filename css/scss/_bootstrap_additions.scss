@@ -7,6 +7,16 @@
     }
 }
 
+.modal-header,
+.modal-footer {
+    background-color: $primary-1;
+    color: #fff;
+}
+
+.modal-backdrop {
+    opacity: 0.8 !important;
+}
+
 input:active,
 input:focus {
     border-color: $primary-1 !important;

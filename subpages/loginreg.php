@@ -32,21 +32,25 @@ $login    = ($page === "login.php")    ? true : false;
                 
                 <form class="section-login-right-form" method="post">
 
-                    <label for="username" class="form-label text-danger">
-                        Username already in use.
+                    <label for="username" class="form-label">
+                        Username
                     </label>
-
                     <input type="text" name="username" class="form-control"
                     maxlength="<?php echo LIMIT_USERNAME; ?>"
                     placeholder="<?php echo LOGINREG_PLACEHOLDER_USERNAME; ?>">
+                    <p class="error text-danger">
+                        Example error message
+                    </p>
 
-                    <label for="password" class="form-label text-danger">
-                        Password incorect.
+                    <label for="password" class="form-label">
+                        Password
                     </label>
-
                     <input type="password" name="password" class="form-control"
                     maxlength="<?php echo LIMIT_PASSWORD; ?>"
                     placeholder="<?php echo LOGINREG_PLACEHOLDER_PASSWORD; ?>">
+                    <p class="error text-danger">
+                        Example error message
+                    </p>
 
                     <div class="section-login-right-form-buttons">
                         <a class="btn btn-primary-1" href="#">

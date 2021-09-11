@@ -14,6 +14,16 @@ body {
   color: #fff;
 }
 
+.modal-header,
+.modal-footer {
+  background-color: #49a078;
+  color: #fff;
+}
+
+.modal-backdrop {
+  opacity: 0.8 !important;
+}
+
 input:active,
 input:focus {
   border-color: #49a078 !important;
