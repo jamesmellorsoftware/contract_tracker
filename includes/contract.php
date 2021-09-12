@@ -25,21 +25,20 @@ class Contract extends db_objects {
 
     public static function retrieve() {
         global $db;
+        global $session;
 
-        $sql = "SELECT * FROM " . Contract::get_table_name() . " ";
-
-        // join to clients table to retrieve client name
-        $sql.= "INNER JOIN " . Client::get_table_name() . " ";
+        $sql = "SELECT * FROM " . Contract::get_table_name() . " AS Co ";
+        $sql.= "JOIN " . Client::get_table_name() . " AS Cl ";
         $sql.= "ON ";
-        $sql.= Contract::get_table_name() . ".client_id = " . Client::get_table_name() . "." . "id ";
-        // $sql.= "WHERE username = ? ";
-        // $sql.= "LIMIT 1 ";
+        $sql.= "Co.client_id = Cl.id ";
+        $sql.= "WHERE Cl.user_id = ? ";
 
         $stmt = $db->connection->prepare($sql);
-        // $stmt->bind_param("s", $username);
+        $stmt->bind_param("i", $session->user_id);
         $stmt->execute();
         $results = $stmt->get_result();
-        $result_set = self::retrieve_objects_from_db($results);
+
+        $result_set = self::retrieve_objects_from_db($results, false);
 
         return $result_set;
     }

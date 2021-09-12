@@ -35,17 +35,17 @@ class db_objects {
         return $result_object_set;
     }
 
-    public static function retrieve_objects_from_db($query_results){
+    public static function retrieve_objects_from_db($query_results, $check_attrs = true){
         // Loop through assoc array from query results and instantiate object for every row
         $result_object_set = [];
         while ($row = $query_results->fetch_assoc()) {
-            $result_object_set[] = static::retrieved_row_to_object_instance($row);
+            $result_object_set[] = static::retrieved_row_to_object_instance($row, $check_attrs);
         }
 
         return $result_object_set;
     }
 
-    public static function retrieved_row_to_object_instance($row) {
+    public static function retrieved_row_to_object_instance($row, $check_attrs = true) {
         // Creates instance of class called from mysqli_query() results
 
         $called_class = get_called_class();
@@ -54,7 +54,11 @@ class db_objects {
 
         foreach ($row as $col => $value) {
             // If the class actually has the property retrieved from DB col, assign it
-            if ($new_instance_from_object->has_attribute($col)) $new_instance_from_object->$col = $value;
+            if ($check_attrs) {
+                if ($new_instance_from_object->has_attribute($col)) $new_instance_from_object->$col = $value;
+            } else {
+                $new_instance_from_object->$col = $value;
+            }
         }
 
         return $new_instance_from_object;

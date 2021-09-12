@@ -1,6 +1,8 @@
 <?php
 require_once("includes/head.php");
 if (!$session->is_signed_in()) header("Location: login.php");
+$contracts = Contract::retrieve();
+print_r($contracts);
 ?>
 
 <main class="section section-mainapp">
@@ -50,142 +52,22 @@ if (!$session->is_signed_in()) header("Location: login.php");
                         <th class="section-right-table-delete"></th>
                     </thead>
                     <tbody>
-                        <tr class="section-right-table-row">
-                            <td>1</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr class="section-right-table-row">
-                            <td>2</td>
-                            <td>2</td>
-                            <td>John Smith</td>
-                            <td class="section-right-table-delete">
-                                <i class="bi bi-x-circle-fill text-danger"></i>
-                            </td>
-                        </tr>
+                        <?php foreach ($contracts as $contract) { ?>
+                            <tr class="section-right-table-row">
+                                <td>
+                                    <?php echo $contract->id; ?>
+                                </td>
+                                <td>
+                                    <?php echo $contract->client_id; ?>
+                                </td>
+                                <td>
+                                    <?php echo $contract->name; ?>
+                                </td>
+                                <td class="section-right-table-delete">
+                                    <i class="bi bi-x-circle-fill text-danger"></i>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
 

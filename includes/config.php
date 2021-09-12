@@ -10,6 +10,7 @@ require_once('db.php');
 require_once('session.php');
 require_once('db_objects.php');
 require_once('client.php');
+require_once('contract.php');
 require_once('user.php');
 
 // Define input limits
