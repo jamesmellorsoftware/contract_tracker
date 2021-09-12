@@ -30,7 +30,7 @@ class Client extends db_objects {
         // Check empty fields, field lengths, and regex out anything other than alphanumerics
         if (empty($this->name) || strlen($this->name < 1)) $this->errors['name'] = CLIENTS_ERROR_NAME_EMPTY;
         if (strlen($this->name) > LIMIT_CLIENT_NAME)       $this->errors['name'] = CLIENTS_ERROR_NAME_LENGTH;
-        if (preg_match('/[a-z_\-0-9]/i', $this->name))     $this->errors['name'] = CLIENTS_ERROR_NAME_SYMBOLS;
+        if (!preg_match('/[a-z_\-0-9]/i', $this->name))     $this->errors['name'] = CLIENTS_ERROR_NAME_SYMBOLS;
 
         if (!empty($this->errors)) return false;
 
@@ -53,12 +53,10 @@ class Client extends db_objects {
         return $result_set;
     }
 
-    public static function initialise_new($name) {
-        global $session;
-
+    public static function initialise_new($name, $user_id) {
         $new_client = new Client;
         $new_client->name = trim($name);
-        $new_client->user_id = $session->user_id;
+        $new_client->user_id = $user_id;
 
         return $new_client;
     }

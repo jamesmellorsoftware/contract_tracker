@@ -5,7 +5,7 @@ require_once("../variables.php");
 
 if (isset($_POST['action']) && $_POST['action'] == "add_client") {
 
-    $new_client = Client::initialise_new($_POST['name']);
+    $new_client = Client::initialise_new($_POST['name'], $session->user_id);
 
     if (!$new_client->verify_new()) {
         echo json_encode($new_client->errors);

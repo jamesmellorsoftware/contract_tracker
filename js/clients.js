@@ -46,9 +46,5 @@ ContractTracker.clients.addClient = () => {
     });
 }
 
-ContractTracker.clients.reloadTable = () => {
-    console.log('success');
-}
-
 // Add click handlers
 ContractTracker.addClickListener(ContractTracker.clients.elements.button, ContractTracker.clients.addClient)

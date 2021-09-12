@@ -2,7 +2,6 @@
 require_once("includes/head.php");
 if (!$session->is_signed_in()) header("Location: login.php");
 $contracts = Contract::retrieve();
-print_r($contracts);
 ?>
 
 <main class="section section-mainapp">

@@ -3,7 +3,7 @@
 class Contract extends db_objects {
 
     protected static $db_table = "contracts";
-    protected static $db_table_fields = array("id", "user_id", "client_id");
+    protected static $db_table_fields = array("id", "client_id");
 
     public $id;
     public $user_id;
@@ -19,6 +19,19 @@ class Contract extends db_objects {
         $stmt->execute();
         
         $this->id = $db->inserted_id();
+
+        return true;
+    }
+
+    public function verify_new() {
+        // Check empty fields
+        if (empty($this->client_id) || strlen($this->client_id < 1)) $this->errors['client_id'] = CONTRACTS_ERROR_NOCLIENT;
+
+        // Check if this client belongs to the user
+        // (user should not be able to add a contract to another customer that is not theirs)
+        if (!User::has_client($this->client_id)) $this->errors['logout'] = 1;
+
+        if (!empty($this->errors)) return false;
 
         return true;
     }
@@ -43,6 +56,12 @@ class Contract extends db_objects {
         return $result_set;
     }
 
-} // end of class Client
+    public static function initialise_new($client) {
+        $new_contract = new Client;
+        $new_contract->client_id = trim($client);
+        return $new_contract;
+    }
+
+} // end of class Contract
 
 ?>

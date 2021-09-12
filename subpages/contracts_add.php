@@ -1,3 +1,7 @@
+<?php
+$clients = Client::retrieve();
+?>
+
 <div id="contracts_add" class="modal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -13,25 +17,29 @@
             <form method="post">
                 <div class="modal-body">
 
-                    <label for="client" class="form-label">
+                    <label for="contract_client" class="form-label">
                         Client
                     </label>
-                    <select class="form-control" name="client">
+                    <select class="form-select" id="contract_client" name="contract_client">
                         <option value="">
-                            1 - Johnno
+                            Select a client
                         </option>
-                        <option value="">
-                            2 - Janey
-                        </option>
+                        <?php foreach ($clients as $client) { ?>
+                            <option value="<?php echo $client->id; ?>">
+                                <?php echo $client->id . " - " . $client->name; ?>
+                            </option>
+                        <?php } ?>
                     </select>
-                    <p class="error text-danger">
+                    <p class="error error-contract_client text-danger">
                         Example error message
                     </p>
                     
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark">Add</button>
+                    <button type="button" class="btn btn-dark" id="add_contract">
+                        Add Contract
+                    </button>
                 </div>
             </form>
 
