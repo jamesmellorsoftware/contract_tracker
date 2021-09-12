@@ -10,21 +10,27 @@
                 data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form method="post">
-                <div class="modal-body">
-                    <label for="exampleFormControlInput1" class="form-label">
-                        Client Name
-                    </label>
-                    <input type="text" class="form-control" name="">
-                    <p class="error text-danger">
-                        Example error message
-                    </p>
-                </div>
+            <div class="modal-body">
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-dark">Add</button>
-                </div>
-            </form>
+                <label for="exampleFormControlInput1" class="form-label">
+                    Client Name
+                </label>
+
+                <input type="text" class="form-control"
+                id="name" name="name" placeholder="John"
+                maxlength="<?php echo LIMIT_CLIENT_NAME; ?>">
+
+                <p class="error error-name text-danger">
+                    Example error message
+                </p>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" id="add_client">
+                    Add
+                </button>
+            </div>
 
         </div>
     </div>

@@ -45,7 +45,7 @@ $clients = Client::retrieve();
                         </th>
                         <th></th>
                     </thead>
-                    
+
                     <tbody>
                         <?php foreach ($clients as $client) { ?>
                             <tr class="section-right-table-row">
@@ -69,8 +69,16 @@ $clients = Client::retrieve();
     </div>
 </main>
 
+
+
 <?php
+// Modals
 require_once("subpages/clients_add.php");
 require_once("subpages/clients_search.php");
+?>
+
+<script src="js/clients.js"></script>
+
+<?php
 require_once("includes/foot.php");
 ?>

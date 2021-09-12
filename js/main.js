@@ -6,13 +6,13 @@ window.ContractTracker.class = {};
 window.ContractTracker.class.loading = "spinner-border";
 
 // Define methods
-ContractTracker.addClickListener = function(elem, clickFunc) {
+ContractTracker.addClickListener = (elem, clickFunc) => {
     elem.addEventListener('click', () => {
         clickFunc();
     });
 }
 
-ContractTracker.addLoader = function(elem) {
+ContractTracker.addLoader = (elem) => {
     elem.insertAdjacentHTML(
         "afterbegin",
         '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
@@ -20,7 +20,7 @@ ContractTracker.addLoader = function(elem) {
     return true;
 }
 
-ContractTracker.displayErrors = function(elems) {
+ContractTracker.displayErrors = (elems) => {
     for (target in elems) {
         // Display text errors
         let err_elems = document.getElementsByClassName(`error-${target}`);
@@ -37,7 +37,11 @@ ContractTracker.displayErrors = function(elems) {
     }
 }
 
-ContractTracker.removeLoaders = function(elem) {
+ContractTracker.logout = () => {
+    window.location = "logout.php";
+}
+
+ContractTracker.removeLoaders = (elem) => {
     let el = elem.querySelector(`.${ContractTracker.class.loading}`);
     elem.removeChild(el);
     return true;

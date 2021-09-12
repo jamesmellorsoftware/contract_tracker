@@ -12,13 +12,27 @@ class Client extends db_objects {
     public function save(){
         global $db;
 
-        $sql = "INSERT INTO " . Client::get_table_name() . " (name) VALUES (?)";
+        $sql = "INSERT INTO " . Client::get_table_name() . " (user_id, name) VALUES (?, ?)";
 
         $stmt = $db->connection->prepare($sql);
-        $stmt->bind_param("s", $this->name);
+        $stmt->bind_param("is", $this->user_id, $this->name);
         $stmt->execute();
         
         $this->id = $db->inserted_id();
+
+        return true;
+    }
+
+    public function verify_new() {
+        // Check if there is a client user ID set. If not, log the user out before the client can be created.
+        if (!isset($this->user_id) || empty($this->user_id)) $this->errors['logout'] = 1;
+
+        // Check empty fields, field lengths, and regex out anything other than alphanumerics
+        if (empty($this->name) || strlen($this->name < 1)) $this->errors['name'] = CLIENTS_ERROR_NAME_EMPTY;
+        if (strlen($this->name) > LIMIT_CLIENT_NAME)       $this->errors['name'] = CLIENTS_ERROR_NAME_LENGTH;
+        if (preg_match('/[a-z_\-0-9]/i', $this->name))     $this->errors['name'] = CLIENTS_ERROR_NAME_SYMBOLS;
+
+        if (!empty($this->errors)) return false;
 
         return true;
     }
@@ -36,9 +50,17 @@ class Client extends db_objects {
         $results = $stmt->get_result();
         $result_set = self::retrieve_objects_from_db($results);
 
-        print_r($result_set);
-
         return $result_set;
+    }
+
+    public static function initialise_new($name) {
+        global $session;
+
+        $new_client = new Client;
+        $new_client->name = trim($name);
+        $new_client->user_id = $session->user_id;
+
+        return $new_client;
     }
 
 } // end of class Client
