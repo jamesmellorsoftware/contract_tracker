@@ -92,6 +92,10 @@ ContractTracker.contracts.editContract = () => {
 }
 
 ContractTracker.contracts.startEditingContract = () => {
+    if (event.target.classList.contains("no_click")) {
+        return false;
+    }
+    
     let row = event.target.parentElement;
     let contract_id = row.getAttribute("href");
     let client_id = row.getAttribute("href2");

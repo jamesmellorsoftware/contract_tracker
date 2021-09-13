@@ -125,6 +125,11 @@ ContractTracker.clients.editClient = () => {
 }
 
 ContractTracker.clients.startEditingClient = () => {
+
+    if (event.target.classList.contains("no_click")) {
+        return false;
+    }
+
     let row = event.target.parentElement;
     let client_id = row.getAttribute("href");
     let client_name = row.querySelector(".client_name").innerHTML.trim();

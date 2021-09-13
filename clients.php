@@ -57,8 +57,8 @@ $clients = Client::retrieve();
                                 <td class="client_name">
                                     <?php echo $client->name; ?>
                                 </td>
-                                <td class="section-right-table-delete">
-                                    <i class="bi bi-x-circle-fill text-danger"></i>
+                                <td class="section-right-table-delete no_click">
+                                    <i class="bi bi-x-circle-fill text-danger no_click"></i>
                                 </td>
                             </tr>
                         <?php } ?>
