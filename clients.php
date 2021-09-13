@@ -37,10 +37,10 @@ $clients = Client::retrieve();
 
                 <table class="table table-hover section-right-table section-clients-right-table">
                     <thead>
-                        <th class="section-right-table-head table_head">
+                        <th class="section-right-table-head">
                             Client ID
                         </th>
-                        <th class="section-right-table-head table_head">
+                        <th class="section-right-table-head">
                             Client name
                         </th>
                         <th></th>

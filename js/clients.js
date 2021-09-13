@@ -114,7 +114,7 @@ ContractTracker.clients.editClient = () => {
                 location.reload();
             } else {
                 ContractTracker.removeLoaders(button);
-                ContractTracker.displayErrors({name_edit: response.name_edit})
+                ContractTracker.displayErrors({name_edit: response.name})
             }
         },
         error: function(error) {

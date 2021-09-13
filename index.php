@@ -52,14 +52,17 @@ $contracts = Contract::retrieve();
                     </thead>
                     <tbody>
                         <?php foreach ($contracts as $contract) { ?>
-                            <tr class="section-right-table-row">
-                                <td>
-                                    <?php echo $contract->id; ?>
+                            <tr
+                                class="section-right-table-row table_row"
+                                href="<?php echo $contract->contract_id; ?>"
+                                href2="<?php echo $contract->client_id ?>">
+                                <td class="contract_id">
+                                    <?php echo $contract->contract_id; ?>
                                 </td>
-                                <td>
+                                <td class="contract_client_id">
                                     <?php echo $contract->client_id; ?>
                                 </td>
-                                <td>
+                                <td class="contract_client_name">
                                     <?php echo $contract->name; ?>
                                 </td>
                                 <td class="section-right-table-delete">
@@ -79,6 +82,7 @@ $contracts = Contract::retrieve();
 <?php
 // Modals
 require_once("subpages/contracts_add.php");
+require_once("subpages/contracts_edit.php");
 require_once("subpages/contracts_search.php");
 ?>
 
