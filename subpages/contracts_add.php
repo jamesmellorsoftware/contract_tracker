@@ -17,10 +17,10 @@ $clients = Client::retrieve();
             <form method="post">
                 <div class="modal-body">
 
-                    <label for="contract_client" class="form-label">
+                    <label for="client_id" class="form-label">
                         Client
                     </label>
-                    <select class="form-select" id="contract_client" name="contract_client">
+                    <select class="form-select" id="client_id" name="client_id">
                         <option value="">
                             Select a client
                         </option>
@@ -30,7 +30,7 @@ $clients = Client::retrieve();
                             </option>
                         <?php } ?>
                     </select>
-                    <p class="error error-contract_client text-danger">
+                    <p class="error error-client_id text-danger">
                         Example error message
                     </p>
                     

@@ -6,16 +6,15 @@ class Contract extends db_objects {
     protected static $db_table_fields = array("id", "client_id");
 
     public $id;
-    public $user_id;
     public $client_id;
 
     public function save(){
         global $db;
 
-        $sql = "INSERT INTO " . Client::get_table_name() . " (user_id, client_id) VALUES (?, ?)";
+        $sql = "INSERT INTO " . Contract::get_table_name() . " (client_id) VALUES (?)";
 
         $stmt = $db->connection->prepare($sql);
-        $stmt->bind_param("ii", $this->name);
+        $stmt->bind_param("i", $this->client_id);
         $stmt->execute();
         
         $this->id = $db->inserted_id();
@@ -27,9 +26,12 @@ class Contract extends db_objects {
         // Check empty fields
         if (empty($this->client_id) || strlen($this->client_id < 1)) $this->errors['client_id'] = CONTRACTS_ERROR_NOCLIENT;
 
+        if (!empty($this->errors)) return false;
+
         // Check if this client belongs to the user
         // (user should not be able to add a contract to another customer that is not theirs)
-        if (!User::has_client($this->client_id)) $this->errors['logout'] = 1;
+        //if (!Client::belongs_to_active_user($this->client_id)) $this->errors['logout'] = 1;
+        if (!Client::belongs_to_active_user($this->client_id)) $this->errors['client_id'] = "oh dear";
 
         if (!empty($this->errors)) return false;
 
@@ -56,9 +58,9 @@ class Contract extends db_objects {
         return $result_set;
     }
 
-    public static function initialise_new($client) {
-        $new_contract = new Client;
-        $new_contract->client_id = trim($client);
+    public static function initialise_new($client_id) {
+        $new_contract = new Contract;
+        $new_contract->client_id = trim($client_id);
         return $new_contract;
     }
 

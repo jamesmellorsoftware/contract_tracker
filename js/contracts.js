@@ -7,7 +7,7 @@ ContractTracker.contracts.controllers.maincontroller = "includes/controllers/con
 
 // Define contracts elements
 ContractTracker.contracts.elements = {};
-ContractTracker.contracts.elements.contract_client = document.getElementById("contract_client");
+ContractTracker.contracts.elements.contract_client = document.getElementById("client_id");
 ContractTracker.contracts.elements.button = document.getElementById("add_contract");
 
 // Define contracts methods
@@ -19,24 +19,25 @@ ContractTracker.contracts.addContract = () => {
 
     // Get name
     let client = ContractTracker.contracts.elements.contract_client.value;
-    
+
     // Pass to server to check
     $.ajax({
         type: 'post',
         url: ContractTracker.contracts.controllers.maincontroller,
         dataType: 'json',
         data: {
-            "action": "add_contract",
-            "client" : contract_client
+            "action"    : "add_contract",
+            "client_id" : client
         },
         success: function(response){
-            if (response.logout == true) {
+            // if (response.logout == true) {
+            if (response.logout == 1) {
                 ContractTracker.logout();
             } else if (response == true) {
                 location.reload();
             } else {
                 ContractTracker.removeLoaders(button);
-                ContractTracker.displayErrors({name: response.name})
+                ContractTracker.displayErrors({client_id: response.client_id})
             }
         },
         error: function(error) {

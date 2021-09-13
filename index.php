@@ -77,7 +77,13 @@ $contracts = Contract::retrieve();
 </main>
 
 <?php
+// Modals
 require_once("subpages/contracts_add.php");
 require_once("subpages/contracts_search.php");
+?>
+
+<script src="js/contracts.js"></script>
+
+<?php
 require_once("includes/foot.php");
 ?>
