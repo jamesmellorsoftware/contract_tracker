@@ -37,10 +37,10 @@ $clients = Client::retrieve();
 
                 <table class="table table-hover section-right-table section-clients-right-table">
                     <thead>
-                        <th class="section-right-table-head">
+                        <th class="section-right-table-head table_head">
                             Client ID
                         </th>
-                        <th class="section-right-table-head">
+                        <th class="section-right-table-head table_head">
                             Client name
                         </th>
                         <th></th>
@@ -48,11 +48,13 @@ $clients = Client::retrieve();
 
                     <tbody>
                         <?php foreach ($clients as $client) { ?>
-                            <tr class="section-right-table-row">
+                            <tr
+                                class="section-right-table-row table_row"
+                                href="<?php echo $client->id; ?>">
                                 <td>
                                     <?php echo $client->id; ?>
                                 </td>
-                                <td>
+                                <td class="client_name">
                                     <?php echo $client->name; ?>
                                 </td>
                                 <td class="section-right-table-delete">
@@ -74,6 +76,7 @@ $clients = Client::retrieve();
 <?php
 // Modals
 require_once("subpages/clients_add.php");
+require_once("subpages/clients_edit.php");
 require_once("subpages/clients_search.php");
 ?>
 
