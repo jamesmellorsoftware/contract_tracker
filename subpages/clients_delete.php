@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
-            <div class="modal-header">
+            <div class="modal-header bg-danger">
                 <h5 class="modal-title">
                     Delete Client
                 </h5>
@@ -24,7 +24,7 @@
 
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer bg-danger">
                 <button type="button" class="btn btn-dark" id="delete_client">
                     Yes, Confirm Delete
                 </button>

@@ -17,7 +17,7 @@
                 <input type="hidden" id="contract_id_edit" value="">
 
                 <label for="client_id" class="form-label">
-                    Contract
+                    Contract Owner
                 </label>
                 <select class="form-select" id="client_id_edit" name="client_id_edit">
                     <option value="">

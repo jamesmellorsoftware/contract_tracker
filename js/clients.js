@@ -103,6 +103,7 @@ ContractTracker.clients.addClient = () => {
 ContractTracker.clients.checkDeleteClient = () => {
 
     let row = event.target.closest(".table_row");
+    
     let client_id = row.getAttribute("href");
     let client_name = row.querySelector(".client_name").innerHTML.trim();
     
