@@ -193,7 +193,7 @@ ContractTracker.clients.editClient = () => {
     });
 }
 
-ContractTracker.clients.searchClient = () => {
+ContractTracker.clients.searchClients = () => {
 
     let button =  ContractTracker.clients.elements.search_modal_button;
     ContractTracker.addLoader(button);
@@ -254,7 +254,7 @@ ContractTracker.addClickListener(
 );
 ContractTracker.addClickListener(
     ContractTracker.clients.elements.search_modal_button,
-    ContractTracker.clients.searchClient
+    ContractTracker.clients.searchClients
 );
 Array.from(ContractTracker.clients.elements.table_row).forEach((element) => {
     ContractTracker.addClickListener(element, ContractTracker.clients.startEditingClient);

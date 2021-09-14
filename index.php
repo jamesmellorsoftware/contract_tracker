@@ -1,7 +1,9 @@
 <?php
 require_once("includes/head.php");
 if (!$session->is_signed_in()) header("Location: login.php");
+$searchActive = (isset($_GET['search']) && $_GET['search'] == "active") ? true : false;
 $contracts = Contract::retrieve();
+$contracts = ($searchActive) ? Contract::retrieve(true, $_GET) : Contract::retrieve();
 ?>
 
 <main class="section section-mainapp">
@@ -23,7 +25,8 @@ $contracts = Contract::retrieve();
                         <i class="bi bi-plus section-mainapp-right-controls-icon"
                         data-bs-toggle="modal" data-bs-target="#contracts_add"></i>
                         
-                        <i class="bi bi-search section-mainapp-right-controls-icon"
+                        <i class="bi bi-search section-mainapp-right-controls-icon
+                        <?php if ($searchActive) echo "text-success" ?>"
                         data-bs-toggle="modal" data-bs-target="#contracts_search"></i>
 
                         <a href="clients.php">

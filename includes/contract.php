@@ -118,9 +118,16 @@ class Contract extends db_objects {
         return true;
     }
 
-    public static function retrieve() {
+    public static function retrieve($search = false, $search_params = []) {
+        // $search_params is just $_GET superglobal
+
         global $db;
         global $session;
+
+        $types = "i";
+        $values = [
+            $session->user_id
+        ];
 
         $sql = "SELECT Co.id AS contract_id, Cl.id AS client_id, Cl.name ";
         $sql.= "FROM " . Contract::get_table_name() . " AS Co ";
@@ -129,8 +136,36 @@ class Contract extends db_objects {
         $sql.= "Co.client_id = Cl.id ";
         $sql.= "WHERE Cl.user_id = ? ";
 
+        if ($search) {
+            if (isset($search_params['id'])
+                && !empty($search_params['id'])
+                && filter_var($search_params['id'], FILTER_VALIDATE_INT)
+            ) {
+                $sql.= "AND Co.id = ? ";
+                $types.= "i";
+                array_push($values, trim($search_params['id']));
+            }
+            if (isset($search_params['client_id'])
+                && !empty($search_params['client_id'])
+                && filter_var($search_params['client_id'], FILTER_VALIDATE_INT)
+            ) {
+                $sql.= "AND Cl.id = ? ";
+                $types.= "i";
+                array_push($values, trim($search_params['client_id']));
+            }
+            if (isset($search_params['client_name'])
+                && !empty($search_params['client_name'])
+                && preg_match('/[a-z_\-0-9]/i', $search_params['client_name'])
+                && strlen($search_params['client_name']) < LIMIT_CLIENT_NAME
+            ) {
+                $sql.= "AND Cl.name LIKE ? ";
+                $types.= "s";
+                array_push($values, "%" . trim($search_params['client_name']) . "%");
+            }
+        }
+
         $stmt = $db->connection->prepare($sql);
-        $stmt->bind_param("i", $session->user_id);
+        $stmt->bind_param($types, ...$values);
         $stmt->execute();
         $results = $stmt->get_result();
 
