@@ -22,6 +22,13 @@ ContractTracker.clients.elements.delete_modal_button = document.getElementById("
 ContractTracker.clients.elements.open_delete_modal = document.getElementById("clients_delete_open");
 ContractTracker.clients.elements.client_delete_id = document.getElementById("client_delete_id");
 ContractTracker.clients.elements.client_delete_name = document.getElementById("client_delete_name");
+// Search modal
+ContractTracker.clients.elements.search_client = document.getElementById("clients_search");
+ContractTracker.clients.elements.search_modal_button = document.getElementById("search_client");
+ContractTracker.clients.elements.search_modal_clear = document.getElementById("clear_search");
+ContractTracker.clients.elements.search_modal_id = document.getElementById("clients_search_id");
+ContractTracker.clients.elements.search_modal_name = document.getElementById("clients_search_name");
+
 
 // Define clients methods
 ContractTracker.clients.addClient = () => {
@@ -59,7 +66,6 @@ ContractTracker.clients.addClient = () => {
     });
 }
 
-// Order clients methods
 ContractTracker.clients.addClient = () => {
 
     let button =  ContractTracker.clients.elements.button;
@@ -106,6 +112,15 @@ ContractTracker.clients.checkDeleteClient = () => {
 
     // Open edit modal
     ContractTracker.clients.elements.open_delete_modal.click();
+}
+
+ContractTracker.clients.clearSearch = () => {
+    let button =  ContractTracker.clients.elements.search_modal_clear;
+    ContractTracker.addLoader(button);
+
+    let url = location.protocol + "//" + location.hostname + location.pathname;
+
+    window.location = url;
 }
 
 ContractTracker.clients.deleteClient = () => {
@@ -162,7 +177,6 @@ ContractTracker.clients.editClient = () => {
             "name"  : name
         },
         success: function(response){
-            console.log(response);
             if (response.logout == true) {
                 ContractTracker.logout();
             } else if (response == true) {
@@ -177,6 +191,30 @@ ContractTracker.clients.editClient = () => {
             console.debug(error);
         }
     });
+}
+
+ContractTracker.clients.searchClient = () => {
+
+    let button =  ContractTracker.clients.elements.search_modal_button;
+    ContractTracker.addLoader(button);
+
+    // Get name and id
+    let id = ContractTracker.clients.elements.search_modal_id.value;
+    let name = ContractTracker.clients.elements.search_modal_name.value;
+
+    let url = location.protocol + "//" + location.hostname + location.pathname;
+
+    if (id.length || name.length) {
+        url += "?search=active"
+    }
+    if (id.length) {
+        url += `&id=${id}`;
+    }
+    if (name.length) {
+        url += `&name=${name}`;
+    }
+
+    window.location = url;
 }
 
 ContractTracker.clients.startEditingClient = () => {
@@ -203,12 +241,20 @@ ContractTracker.addClickListener(
     ContractTracker.clients.addClient
 );
 ContractTracker.addClickListener(
+    ContractTracker.clients.elements.search_modal_clear,
+    ContractTracker.clients.clearSearch
+);
+ContractTracker.addClickListener(
     ContractTracker.clients.elements.delete_modal_button,
     ContractTracker.clients.deleteClient
 );
 ContractTracker.addClickListener(
     ContractTracker.clients.elements.edit_modal_button,
     ContractTracker.clients.editClient
+);
+ContractTracker.addClickListener(
+    ContractTracker.clients.elements.search_modal_button,
+    ContractTracker.clients.searchClient
 );
 Array.from(ContractTracker.clients.elements.table_row).forEach((element) => {
     ContractTracker.addClickListener(element, ContractTracker.clients.startEditingClient);

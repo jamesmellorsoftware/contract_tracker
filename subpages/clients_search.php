@@ -16,23 +16,32 @@
                     <label for="exampleFormControlInput1" class="form-label">
                         Client ID
                     </label>
-                    <input type="number" class="form-control" name="">
-                    <p class="error text-danger">
-                        Example error message
-                    </p>
+                    <input type="number" class="form-control"
+                    name="clients_search_id" id="clients_search_id"
+                    value="<?php
+                        if (isset($_GET['id']) && !empty($_GET['id'])) {
+                            echo htmlentities($_GET['id']);
+                        }
+                    ?>">
 
                     <label for="exampleFormControlInput1" class="form-label">
                         Client Name
                     </label>
-                    <input type="text" class="form-control" name="">
-                    <p class="error text-danger">
-                        Example error message
-                    </p>
+                    <input type="text" class="form-control"
+                    name="clients_search_name" id="clients_search_name"
+                    value="<?php
+                        if (isset($_GET['name']) && !empty($_GET['name'])) {
+                            echo htmlentities($_GET['name']);
+                        }
+                    ?>">
                     
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark">
+                    <button type="button" class="btn btn-danger" id="clear_search">
+                        Clear
+                    </button>
+                    <button type="button" class="btn btn-dark" id="search_client">
                         Search
                     </button>
                 </div>

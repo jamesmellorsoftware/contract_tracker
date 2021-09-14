@@ -123,15 +123,42 @@ class Client extends db_objects {
         return true;
     }
 
-    public static function retrieve() {
+    public static function retrieve($search = false, $search_params = []) {
+        // $search_params is just $_GET superglobal
+
         global $db;
         global $session;
+
+        $types = "i";
+        $values = [
+            $session->user_id
+        ];
 
         $sql = "SELECT * FROM " . Client::get_table_name() . " ";
         $sql.= "WHERE user_id = ? ";
 
+        if ($search) {
+            if (isset($search_params['id'])
+                && !empty($search_params['id'])
+                && filter_var($search_params['id'], FILTER_VALIDATE_INT)
+            ) {
+                $sql.= "AND id = ? ";
+                $types.= "i";
+                array_push($values, trim($search_params['id']));
+            }
+            if (isset($search_params['name'])
+                && !empty($search_params['name'])
+                && preg_match('/[a-z_\-0-9]/i', $search_params['name'])
+                && strlen($search_params['name']) < LIMIT_CLIENT_NAME
+            ) {
+                $sql.= "AND name LIKE ? ";
+                $types.= "s";
+                array_push($values, "%" . trim($search_params['name']) . "%");
+            }
+        }
+
         $stmt = $db->connection->prepare($sql);
-        $stmt->bind_param("i", $session->user_id);
+        $stmt->bind_param($types, ...$values);
         $stmt->execute();
         $results = $stmt->get_result();
         $result_set = self::retrieve_objects_from_db($results);

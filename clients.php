@@ -1,7 +1,8 @@
 <?php
 require_once("includes/head.php");
 if (!$session->is_signed_in()) header("Location: login.php");
-$clients = Client::retrieve();
+$searchActive = (isset($_GET['search']) && $_GET['search'] == "active") ? true : false;
+$clients = ($searchActive) ? Client::retrieve(true, $_GET) : Client::retrieve();
 ?>
 
 <main class="section section-clients">
@@ -22,11 +23,14 @@ $clients = Client::retrieve();
                         <i class="bi bi-plus section-clients-right-controls-icon"
                         data-bs-toggle="modal" data-bs-target="#clients_add"></i>
                         
-                        <i class="bi bi-search section-clients-right-controls-icon"
+                        <i class="bi bi-search
+                        section-clients-right-controls-icon
+                        <?php if ($searchActive) echo "text-success" ?>"
                         data-bs-toggle="modal" data-bs-target="#clients_search"></i>
                         
                         <a href="index.php">
-                            <i class="bi bi-receipt section-clients-right-controls-icon"></i>
+                            <i class="bi bi-receipt
+                            section-clients-right-controls-icon"></i>
                         </a>
                     </div>
 
