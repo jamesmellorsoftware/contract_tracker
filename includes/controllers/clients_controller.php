@@ -22,6 +22,25 @@ if (isset($_POST['action']) && $_POST['action'] == "add_client") {
     echo false;
 }
 
+// Delete client
+if (isset($_POST['action']) && $_POST['action'] == "delete_client") {
+
+    $existing_client = Client::initialise_existing($_POST['id'], "", $session->user_id);
+
+    if (!$existing_client->verify_delete()) {
+        echo json_encode($existing_client->errors);
+    } else {
+        if ($existing_client->delete()) {
+            echo true;
+        } else {
+            json_encode($new_client->errors);
+        }
+    }
+
+} else {
+    echo false;
+}
+
 // Edit client
 if (isset($_POST['action']) && $_POST['action'] == "edit_client") {
 

@@ -110,7 +110,7 @@ ContractTracker.clients.checkDeleteClient = () => {
 
 ContractTracker.clients.deleteClient = () => {
 
-    let button =  ContractTracker.clients.elements.delete_client_button;
+    let button =  ContractTracker.clients.elements.delete_modal_button;
     ContractTracker.addLoader(button);
 
     // Get name and id
@@ -126,7 +126,6 @@ ContractTracker.clients.deleteClient = () => {
             "id"    : id
         },
         success: function(response){
-            console.log(response);
             if (response.logout == true) {
                 ContractTracker.logout();
             } else if (response == true) {

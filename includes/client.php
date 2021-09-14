@@ -28,6 +28,36 @@ class Client extends db_objects {
         return true;
     }
 
+    public function delete() {
+
+        $this->delete_all_contracts();
+
+        global $db;
+
+        $sql = "DELETE FROM " . self::get_table_name() . " ";
+        $sql.= "WHERE id = ? AND user_id = ? ";
+        $sql.= "LIMIT 1 ";
+
+        $stmt = $db->connection->prepare($sql);
+        $stmt->bind_param("ii", $this->id, $this->user_id);
+        $stmt->execute();
+
+        return true;
+    }
+
+    public function delete_all_contracts() {
+        global $db;
+
+        $sql = "DELETE FROM " . Contract::get_table_name() . " ";
+        $sql.= "WHERE client_id = ? ";
+
+        $stmt = $db->connection->prepare($sql);
+        $stmt->bind_param("i", $this->id);
+        $stmt->execute();
+
+        return true;
+    }
+
     public function update() {
         global $db;
 
@@ -39,6 +69,21 @@ class Client extends db_objects {
         $stmt = $db->connection->prepare($sql);
         $stmt->bind_param("sii", $this->name, $this->id, $this->user_id);
         $stmt->execute();
+
+        return true;
+    }
+
+    public function verify_delete() {
+
+        // Check if there is a client ID and user ID set
+        // If not, log the user out before the client can be edited
+        if (!isset($this->id) || empty($this->id))           $this->errors['logout'] = 1;
+        if (!isset($this->user_id) || empty($this->user_id)) $this->errors['logout'] = 1;
+
+        // Check if this client belongs to the user
+        if (!self::belongs_to_active_user($this->id)) $this->errors['logout'] = 1;
+
+        if (!empty($this->errors)) return false;
 
         return true;
     }
