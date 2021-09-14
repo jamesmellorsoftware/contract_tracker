@@ -22,6 +22,25 @@ if (isset($_POST['action']) && $_POST['action'] == "add_contract") {
     echo false;
 }
 
+// Delete contract
+if (isset($_POST['action']) && $_POST['action'] == "delete_contract") {
+
+    $existing_contract = Contract::initialise_existing($_POST['client_id'], $_POST['contract_id']);
+
+    if (!$existing_contract->verify_delete()) {
+        echo json_encode($existing_contract->errors);
+    } else {
+        if ($existing_contract->delete()) {
+            echo true;
+        } else {
+            json_encode($existing_contract->errors);
+        }
+    }
+
+} else {
+    echo false;
+}
+
 // Edit contract
 if (isset($_POST['action']) && $_POST['action'] == "edit_contract") {
 

@@ -41,6 +41,52 @@ class Contract extends db_objects {
         return true;
     }
 
+    public function delete() {
+        global $db;
+
+        $sql = "DELETE FROM " . self::get_table_name() . " ";
+        $sql.= "WHERE id = ? AND client_id = ? ";
+        $sql.= "LIMIT 1 ";
+
+        $stmt = $db->connection->prepare($sql);
+        $stmt->bind_param("ii", $this->id, $this->client_id);
+        $stmt->execute();
+
+        return true;
+    }
+
+    public function belongs_to_client($client_id) {
+        global $db;
+
+        $sql = "SELECT COUNT(*) FROM " . self::get_table_name() . " ";
+        $sql.= "WHERE id = ? AND client_id = ? ";
+
+        $stmt = $db->connection->prepare($sql);
+        $stmt->bind_param("ii", $this->id, $client_id);
+        $stmt->execute();
+        $results = $stmt->get_result();
+
+        return ($results->num_rows == 1) ? true : false;
+    }
+
+    public function verify_delete() {
+
+        // Check empty fields
+        if (empty($this->client_id) || strlen($this->client_id < 1)) $this->errors['logout'] = 1;
+        if (empty($this->id) || strlen($this->id < 1))               $this->errors['logout'] = 1;
+
+        if (!empty($this->errors)) return false;
+
+        // Check contract exists and belongs to client
+        // Check client belongs to user
+        if (!$this->belongs_to_client($this->client_id))       $this->errors['logout'] = 1;
+        if (!Client::belongs_to_active_user($this->client_id)) $this->errors['logout'] = 1;
+
+        if (!empty($this->errors)) return false;
+
+        return true;
+    }
+
     public function verify_existing() {
         // Check empty fields
         if (empty($this->client_id) || strlen($this->client_id < 1)) $this->errors['client_id'] = CONTRACTS_ERROR_NOCLIENT;

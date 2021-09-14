@@ -58,7 +58,7 @@ $clients = Client::retrieve();
                                     <?php echo $client->name; ?>
                                 </td>
                                 <td class="section-right-table-delete no_click">
-                                    <i class="bi bi-x-circle-fill text-danger no_click"></i>
+                                    <i class="bi bi-x-circle-fill text-danger delete_client no_click"></i>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -76,6 +76,7 @@ $clients = Client::retrieve();
 <?php
 // Modals
 require_once("subpages/clients_add.php");
+require_once("subpages/clients_delete.php");
 require_once("subpages/clients_edit.php");
 require_once("subpages/clients_search.php");
 ?>
