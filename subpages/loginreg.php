@@ -11,8 +11,7 @@ $login    = ($page === "login.php")    ? true : false;
             <section class="section-left section-login-left">
                 <h3><?php echo PAGE_TITLE ?></h3>
 <pre class="section-left-logo section-login-left-logo">
-░░█ ▄▀█ █▀▄▀█ █▀▀ █▀   █▀▄▀█ █▀▀ █░░ █░░ █▀█ █▀█
-█▄█ █▀█ █░▀░█ ██▄ ▄█   █░▀░█ ██▄ █▄▄ █▄▄ █▄█ █▀▄
+<?php include("snippets/logo.php"); ?>
 </pre>
             </section>
         </div>
