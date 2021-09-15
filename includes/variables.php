@@ -29,7 +29,9 @@ defined("LOGINREG_ERROR_USERNAME_LENGTH") ? null : define("LOGINREG_ERROR_USERNA
 defined("CLIENTS_ERROR_NAME_EMPTY") ? null : define("CLIENTS_ERROR_NAME_EMPTY", "Client name cannot be empty");
 defined("CLIENTS_ERROR_NAME_LENGTH") ? null : define("CLIENTS_ERROR_NAME_LENGTH", "Client name must be no longer than" . LIMIT_CLIENT_NAME . " characters");
 defined("CLIENTS_ERROR_NAME_SYMBOLS") ? null : define("CLIENTS_ERROR_NAME_SYMBOLS", "Client name can only contain numbers and letters");
+defined("CLIENTS_NORESULTS") ? null : define("CLIENTS_NORESULTS", "No clients found.");
 
 // Contracts
 defined("CONTRACTS_ERROR_NOCLIENT") ? null : define("CONTRACTS_ERROR_NOCLIENT", "Please select a client");
+defined("CONTRACTS_NORESULTS") ? null : define("CONTRACTS_NORESULTS", "No contracts found.");
 ?>

@@ -53,27 +53,35 @@ $contracts = ($searchActive) ? Contract::retrieve(true, $_GET) : Contract::retri
                         </th>
                         <th class="section-right-table-delete"></th>
                     </thead>
+
                     <tbody>
-                        <?php foreach ($contracts as $contract) { ?>
-                            <tr
-                                class="section-right-table-row table_row"
-                                href="<?php echo $contract->contract_id; ?>"
-                                href2="<?php echo $contract->client_id ?>">
-                                <td class="contract_id">
-                                    <?php echo $contract->contract_id; ?>
-                                </td>
-                                <td class="contract_client_id">
-                                    <?php echo $contract->client_id; ?>
-                                </td>
-                                <td class="contract_client_name">
-                                    <?php echo $contract->name; ?>
-                                </td>
-                                <td class="section-right-table-delete no_click">
-                                    <i class="bi bi-x-circle-fill text-danger delete_contract no_click"></i>
-                                </td>
+                        <?php if (empty($contracts)) { ?>
+                            <tr class="section-right-table-row">
+                                <td class="text-center" colspan="4"><?php echo CONTRACTS_NORESULTS; ?></td>
                             </tr>
+                        <?php } else { ?>
+                            <?php foreach ($contracts as $contract) { ?>
+                                <tr
+                                    class="section-right-table-row table_row"
+                                    href="<?php echo $contract->contract_id; ?>"
+                                    href2="<?php echo $contract->client_id ?>">
+                                    <td class="contract_id">
+                                        <?php echo $contract->contract_id; ?>
+                                    </td>
+                                    <td class="contract_client_id">
+                                        <?php echo $contract->client_id; ?>
+                                    </td>
+                                    <td class="contract_client_name">
+                                        <?php echo $contract->name; ?>
+                                    </td>
+                                    <td class="section-right-table-delete no_click">
+                                        <i class="bi bi-x-circle-fill text-danger delete_contract no_click"></i>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         <?php } ?>
                     </tbody>
+                    
                 </table>
 
             </section>

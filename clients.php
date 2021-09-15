@@ -51,20 +51,26 @@ $clients = ($searchActive) ? Client::retrieve(true, $_GET) : Client::retrieve();
                     </thead>
 
                     <tbody>
-                        <?php foreach ($clients as $client) { ?>
-                            <tr
-                                class="section-right-table-row table_row"
-                                href="<?php echo $client->id; ?>">
-                                <td>
-                                    <?php echo $client->id; ?>
-                                </td>
-                                <td class="client_name">
-                                    <?php echo $client->name; ?>
-                                </td>
-                                <td class="section-right-table-delete no_click">
-                                    <i class="bi bi-x-circle-fill text-danger delete_client no_click"></i>
-                                </td>
+                        <?php if (empty($clients)) { ?>
+                            <tr class="section-right-table-row">
+                                <td class="text-center" colspan="3"><?php echo CLIENTS_NORESULTS; ?></td>
                             </tr>
+                        <?php } else { ?>
+                            <?php foreach ($clients as $client) { ?>
+                                <tr
+                                    class="section-right-table-row table_row"
+                                    href="<?php echo $client->id; ?>">
+                                    <td>
+                                        <?php echo $client->id; ?>
+                                    </td>
+                                    <td class="client_name">
+                                        <?php echo $client->name; ?>
+                                    </td>
+                                    <td class="section-right-table-delete no_click">
+                                        <i class="bi bi-x-circle-fill text-danger delete_client no_click"></i>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         <?php } ?>
                     </tbody>
                 </table>
