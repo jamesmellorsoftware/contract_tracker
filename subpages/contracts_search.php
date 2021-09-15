@@ -4,7 +4,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">
-                    Search Contracts
+                    <?php echo CONTRACTS_LABEL_CLIENT_SEARCH; ?>
                 </h5>
                 <button type="button" class="btn-close"
                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -14,7 +14,7 @@
                 <div class="modal-body">
 
                     <label for="contracts_search_id" class="form-label">
-                        Contract ID
+                        <?php echo CONTRACTS_TABLETITLE_CONTRACT_ID; ?>
                     </label>
                     <input type="number" class="form-control"
                     name="contracts_search_id" id="contracts_search_id"
@@ -25,7 +25,7 @@
                     ?>">
 
                     <label for="contracts_search_client_id" class="form-label">
-                        Client ID
+                        <?php echo CONTRACTS_TABLETITLE_CLIENT_ID; ?>
                     </label>
                     <input type="number" class="form-control"
                     name="contracts_search_client_id" id="contracts_search_client_id"
@@ -36,7 +36,7 @@
                     ?>">
 
                     <label for="contracts_search_client_name" class="form-label">
-                        Client Name
+                        <?php echo CONTRACTS_LABEL_CLIENT_NAME; ?>
                     </label>
                     <input type="text" class="form-control"
                     name="contracts_search_client_name" id="contracts_search_client_name"
@@ -50,10 +50,10 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" id="clear_search">
-                        Clear
+                        <?php echo CONTRACTS_BUTTON_CLEAR_SEARCH; ?>
                     </button>
                     <button type="button" class="btn btn-dark" id="search_contract">
-                        Search
+                        <?php echo CONTRACTS_BUTTON_SEARCH; ?>
                     </button>
                 </div>
             </form>

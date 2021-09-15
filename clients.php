@@ -42,10 +42,10 @@ $clients = ($searchActive) ? Client::retrieve(true, $_GET) : Client::retrieve();
                 <table class="table table-hover section-right-table section-clients-right-table">
                     <thead>
                         <th class="section-right-table-head">
-                            Client ID
+                            <?php echo CLIENTS_TABLETITLE_CLIENT_ID; ?>
                         </th>
                         <th class="section-right-table-head">
-                            Client name
+                            <?php echo CLIENTS_TABLETITLE_CLIENT_NAME; ?>
                         </th>
                         <th></th>
                     </thead>

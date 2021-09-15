@@ -4,7 +4,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">
-                    Add New Client
+                    <?php echo CLIENTS_LABEL_ADDNEW; ?>
                 </h5>
                 <button type="button" class="btn-close"
                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -13,7 +13,7 @@
             <div class="modal-body">
 
                 <label for="exampleFormControlInput1" class="form-label">
-                    Client Name
+                    <?php echo CLIENTS_LABEL_CLIENT_NAME; ?>
                 </label>
 
                 <input type="text" class="form-control"
@@ -28,7 +28,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" id="add_client">
-                    Add
+                    <?php echo CLIENTS_BUTTON_ADD; ?>
                 </button>
             </div>
 

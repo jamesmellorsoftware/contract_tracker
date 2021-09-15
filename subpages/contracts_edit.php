@@ -6,7 +6,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">
-                    Edit Contract
+                    <?php echo CONTRACTS_LABEL_EDIT; ?>
                 </h5>
                 <button type="button" class="btn-close"
                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -17,11 +17,11 @@
                 <input type="hidden" id="contract_id_edit" value="">
 
                 <label for="client_id" class="form-label">
-                    Contract Owner
+                    <?php echo CONTRACTS_LABEL_CONTRACT_OWNER; ?>
                 </label>
                 <select class="form-select" id="client_id_edit" name="client_id_edit">
                     <option value="">
-                        Select a client
+                        <?php echo CONTRACTS_LABEL_CLIENT_SELECT; ?>
                     </option>
                     <?php foreach ($clients as $client) { ?>
                         <option value="<?php echo $client->id; ?>">
@@ -37,7 +37,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" id="edit_contract">
-                    Edit
+                    <?php echo CONTRACTS_BUTTON_EDIT; ?>
                 </button>
             </div>
 

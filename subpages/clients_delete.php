@@ -6,7 +6,7 @@
 
             <div class="modal-header bg-danger">
                 <h5 class="modal-title">
-                    Delete Client
+                    <?php echo CLIENTS_LABEL_DELETE; ?>
                 </h5>
                 <button type="button" class="btn-close"
                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -15,7 +15,7 @@
             <div class="modal-body">
 
                 <p>
-                    Are you sure you want to delete the following client?
+                    <?php echo CLIENTS_LABEL_CHECKDELETE; ?>
                 </p>
                 <p>
                     <span id="client_delete_id"></span>
@@ -26,7 +26,7 @@
 
             <div class="modal-footer bg-danger">
                 <button type="button" class="btn btn-dark" id="delete_client">
-                    Yes, Confirm Delete
+                    <?php echo CLIENTS_BUTTON_DELETE; ?>
                 </button>
             </div>
 

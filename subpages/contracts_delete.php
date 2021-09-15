@@ -6,7 +6,7 @@
 
             <div class="modal-header bg-danger">
                 <h5 class="modal-title">
-                    Delete Contract
+                    <?php echo CONTRACTS_LABEL_DELETE; ?>
                 </h5>
                 <button type="button" class="btn-close"
                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -15,12 +15,12 @@
             <div class="modal-body">
 
                 <p>
-                    Are you sure you want to delete the following contract?
+                    <?php echo CONTRACTS_LABEL_CHECKDELETE; ?>
                 </p>
                 <p>
-                    Contract
+                    <?php echo CONTRACTS_LABEL_CONTRACT; ?>
                     <span id="contract_delete_id"></span>
-                    (Client <span id="contract_delete_client_id"></span> -
+                    (<?php echo CONTRACTS_LABEL_CLIENT_NAME; ?> <span id="contract_delete_client_id"></span> -
                     <span id="contract_delete_client_name"></span>)
                 </p>
 
@@ -28,7 +28,7 @@
 
             <div class="modal-footer bg-danger">
                 <button type="button" class="btn btn-dark" id="delete_contract">
-                    Yes, Confirm Delete
+                    <?php echo CONTRACTS_BUTTON_DELETE; ?>
                 </button>
             </div>
 

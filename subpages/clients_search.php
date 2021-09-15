@@ -4,7 +4,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">
-                    Search Clients
+                    <?php echo CLIENTS_LABEL_CLIENT_SEARCH; ?>
                 </h5>
                 <button type="button" class="btn-close"
                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -14,7 +14,7 @@
                 <div class="modal-body">
 
                     <label for="exampleFormControlInput1" class="form-label">
-                        Client ID
+                        <?php echo CLIENTS_TABLETITLE_CLIENT_ID; ?>
                     </label>
                     <input type="number" class="form-control"
                     name="clients_search_id" id="clients_search_id"
@@ -25,7 +25,7 @@
                     ?>">
 
                     <label for="exampleFormControlInput1" class="form-label">
-                        Client Name
+                        <?php echo CLIENTS_LABEL_CLIENT_NAME; ?>
                     </label>
                     <input type="text" class="form-control"
                     name="clients_search_name" id="clients_search_name"
@@ -39,10 +39,10 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" id="clear_search">
-                        Clear
+                        <?php echo CLIENTS_BUTTON_CLEAR_SEARCH; ?>
                     </button>
                     <button type="button" class="btn btn-dark" id="search_client">
-                        Search
+                        <?php echo CLIENTS_BUTTON_SEARCH; ?>
                     </button>
                 </div>
             </form>

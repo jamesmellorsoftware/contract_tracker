@@ -43,13 +43,13 @@ $contracts = ($searchActive) ? Contract::retrieve(true, $_GET) : Contract::retri
                 <table class="table table-hover section-right-table section-mainapp-right-table">
                     <thead>
                         <th class="section-right-table-head">
-                            Contract ID
+                            <?php echo CONTRACTS_TABLETITLE_CONTRACT_ID; ?>
                         </th>
                         <th class="section-right-table-head">
-                            Client ID
+                            <?php echo CONTRACTS_TABLETITLE_CLIENT_ID; ?>
                         </th>
                         <th class="section-right-table-head">
-                            Client name
+                            <?php echo CONTRACTS_TABLETITLE_CLIENT_NAME; ?>
                         </th>
                         <th class="section-right-table-delete"></th>
                     </thead>
@@ -81,7 +81,7 @@ $contracts = ($searchActive) ? Contract::retrieve(true, $_GET) : Contract::retri
                             <?php } ?>
                         <?php } ?>
                     </tbody>
-                    
+
                 </table>
 
             </section>

@@ -8,7 +8,7 @@ $clients = Client::retrieve();
 
             <div class="modal-header">
                 <h5 class="modal-title">
-                    Add New Contract
+                    <?php echo CONTRACTS_LABEL_ADDNEW; ?>
                 </h5>
                 <button type="button" class="btn-close"
                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -18,11 +18,11 @@ $clients = Client::retrieve();
                 <div class="modal-body">
 
                     <label for="client_id" class="form-label">
-                        Client
+                        <?php echo CONTRACTS_LABEL_CLIENT_NAME; ?>
                     </label>
                     <select class="form-select" id="client_id" name="client_id">
                         <option value="">
-                            Select a client
+                            <?php echo CONTRACTS_LABEL_CLIENT_SELECT; ?>
                         </option>
                         <?php foreach ($clients as $client) { ?>
                             <option value="<?php echo $client->id; ?>">
@@ -38,7 +38,7 @@ $clients = Client::retrieve();
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" id="add_contract">
-                        Add Contract
+                        <?php echo CONTRACTS_BUTTON_ADD; ?>
                     </button>
                 </div>
             </form>

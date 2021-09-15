@@ -32,7 +32,7 @@ $login    = ($page === "login.php")    ? true : false;
                 <div class="section-login-right-form" method="post">
 
                     <label for="username" class="form-label">
-                        Username
+                        <?php echo LOGINREG_LABEL_USERNAME; ?>
                     </label>
                     <input type="text" id="username" name="username" class="form-control"
                     maxlength="<?php echo LIMIT_USERNAME; ?>"
@@ -40,7 +40,7 @@ $login    = ($page === "login.php")    ? true : false;
                     <p class="error error-username text-danger invisible"></p>
 
                     <label for="password" class="form-label">
-                        Password
+                        <?php echo LOGINREG_LABEL_PASSWORD; ?>
                     </label>
                     <input type="password" id="password" name="password" class="form-control"
                     maxlength="<?php echo LIMIT_PASSWORD; ?>"
