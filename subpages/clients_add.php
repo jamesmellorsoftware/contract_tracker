@@ -20,9 +20,7 @@
                 id="name" name="name" placeholder="John"
                 maxlength="<?php echo LIMIT_CLIENT_NAME; ?>">
 
-                <p class="error error-name text-danger">
-                    Example error message
-                </p>
+                <p class="error error-name text-danger"></p>
 
             </div>
 

@@ -29,9 +29,7 @@
                         </option>
                     <?php } ?>
                 </select>
-                <p class="error error-client_id_edit text-danger">
-                    Example error message
-                </p>
+                <p class="error error-client_id_edit text-danger"></p>
 
             </div>
 

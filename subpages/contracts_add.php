@@ -30,9 +30,7 @@ $clients = Client::retrieve();
                             </option>
                         <?php } ?>
                     </select>
-                    <p class="error error-client_id text-danger">
-                        Example error message
-                    </p>
+                    <p class="error error-client_id text-danger"></p>
                     
                 </div>
 

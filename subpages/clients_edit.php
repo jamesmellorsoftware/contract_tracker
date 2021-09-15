@@ -24,9 +24,7 @@
                 id="name_edit" name="name_edit"
                 maxlength="<?php echo LIMIT_CLIENT_NAME; ?>">
 
-                <p class="error error-name_edit text-danger">
-                    Example error message
-                </p>
+                <p class="error error-name_edit text-danger"></p>
 
             </div>
 
